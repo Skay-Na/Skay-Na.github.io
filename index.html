@@ -1,142 +1,56 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skay-Na 的个人主页</title>
-    <style>
-        :root {
-            --bg-color: #0d1117;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --card-bg: #161b22;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: var(--card-bg);
-            padding: 2rem 1rem;
-            text-align: center;
-            border-bottom: 1px solid #30363d;
-        }
-        nav {
-            margin-top: 1rem;
-        }
-        nav a {
-            color: var(--accent-color);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        section {
-            margin-bottom: 3rem;
-        }
-        h2 {
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            color: #ffffff;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-        }
-        .card h3 {
-            margin-top: 0;
-            color: var(--accent-color);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #8b949e;
-        }
-        .tag {
-            display: inline-block;
-            background: #238636;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Skay-Na / Nanjiakai</h1>
-    <p>游戏开发者 | AI 探索者 | 日语学习中 (N3 冲刺)</p>
-    <nav>
-        <a href="#about">关于我</a>
-        <a href="#projects">项目</a>
-        <a href="#blog">博客/日志</a>
-        <a href="#reading">阅读</a>
-    </nav>
-</header>
+    <canvas id="bg-canvas"></canvas>
 
-<div class="container">
-    <section id="about">
-        <h2>关于我 (About Me)</h2>
-        <p>你好！我是 Skay-Na，一名热衷于使用 <strong>Godot Engine</strong> 的游戏开发者。目前专注于 2D 平台游戏的开发与物理系统优化。</p>
-        <p>除了敲代码，我还在努力提升日语（目前 N5 级，目标 N3），并且深度关注 AI 工具如何改变内容创作流。</p>
-    </section>
+    <header>
+        <h1>Skay-Na / 南嘉凯</h1>
+        <p>游戏开发者 | AI 探索者 | 2000 年生于芮城</p>
+        <nav>
+            <a href="about.html">关于我</a>
+            <a href="projects.html">项目</a>
+            <a href="blog.html">博客/日志</a>
+            <a href="reading.html">阅读</a>
+        </nav>
+    </header>
 
-    <section id="projects">
-        <h2>项目展示 (Projects)</h2>
+    <div class="container">
         <div class="grid">
-            <div class="card">
-                <h3>Godot 2D Platformer</h3>
-                <p>基于 Godot 引擎开发的横版跳跃游戏实验项目，实现了流畅的二段跳和重力感应。</p>
-                <span class="tag">Godot</span> <span class="tag">GDScript</span>
-            </div>
-            <div class="card">
-                <h3>AI Comic Workflow</h3>
-                <p>探索使用 AI 生成动态漫画的自动化流程，提高内容产出效率。</p>
-                <span class="tag">AI</span> <span class="tag">Workflow</span>
-            </div>
+            <a href="about.html" class="module-card">
+                <h2>👤 关于我</h2>
+                <p>2000 年出生，晋中信息学院毕业。在这里了解我的成长路径、技术栈（Godot / Python）以及对未来的探索。</p>
+            </a>
+
+            <a href="projects.html" class="module-card">
+                <h2>🎮 项目展示</h2>
+                <p>正在开发 2D 平台马里奥整蛊类游戏；同时构建针对动态漫画与短剧的 AI 自动化创作工作流。</p>
+            </a>
+
+            <a href="blog.html" class="module-card">
+                <h2>📝 技术日志</h2>
+                <p>记录 Godot 开发中的物理与碰撞逻辑踩坑，以及 AI 工具在内容生产中的实战经验。</p>
+            </a>
+
+            <a href="reading.html" class="module-card">
+                <h2>📚 阅读与思考</h2>
+                <p>从《小岛经济学》到《一课经济学》，记录我对经济常识、跨境电商及全球政策的研究随笔。</p>
+            </a>
         </div>
-    </section>
+    </div>
 
-    <section id="blog">
-        <h2>技术日志 (DevLog)</h2>
-        <div class="card">
-            <h3>[日志] 解决 Godot 中的碰撞层级冲突</h3>
-            <p>记录了在开发 2D 游戏时，如何优雅地处理角色与环境的 Physics Layers...</p>
-            <small>发布于 2026-03-23</small>
-        </div>
-    </section>
+    <footer>
+        <p>© 2026 Skay-Na. Built with GitHub Pages.</p>
+    </footer>
 
-    <section id="reading">
-        <h2>阅读清单 (Reading)</h2>
-        <ul>
-            <li><strong>《一课经济学》</strong> - 亨利·哈兹利特</li>
-            <li><strong>《小岛经济学》</strong> - 彼得·希夫</li>
-            <li><strong>《标准日语》</strong> - 备考 N3 进行中</li>
-        </ul>
-    </section>
-</div>
-
-<footer>
-    <p>© 2026 Skay-Na. Built with GitHub Pages.</p>
-</footer>
-
+    <script src="js/background.js"></script>
 </body>
 </html>
