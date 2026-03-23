@@ -107,6 +107,33 @@ a.module-card h2 {
 .card h3 {
     margin-top: 0;
     color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Drawer effect */
+.card {
+    transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px rgba(88, 166, 255, 0.1);
+}
+
+.card-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    opacity: 0;
+}
+
+.card:hover .card-details {
+    max-height: 500px; /* Large enough to fit content */
+    opacity: 1;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #30363d;
 }
 
 .back-link {
